@@ -1,10 +1,10 @@
 import React from "react";
-import {View, Text, Button} from "react-native";
+import {View, Text, Button, StyleSheet} from "react-native";
 
 const HomeScreen2 = () => {
   return (
     <View>
-      <Text>This is Home2</Text>
+      <Text>Aqui se visualizaran las imagenes</Text>
     </View>
   );
 };
