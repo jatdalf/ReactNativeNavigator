@@ -7,9 +7,9 @@ import SettingsScreen2 from "../screens/SettingsScreen2";
 const SettingsStackScreen = () => {
   const SettingsStack = createNativeStackNavigator();
   return (
-    <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Settings1" component={SettingsScreen1} />
-      <SettingsStack.Screen name="Settings2" component={SettingsScreen2} />
+    <SettingsStack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
+      <SettingsStack.Screen name="FUNDACION" component={SettingsScreen1} />
+      <SettingsStack.Screen name="Contacto" component={SettingsScreen2} />
     </SettingsStack.Navigator>
   );
 };
