@@ -1,33 +1,58 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const SettingsScreen1 = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.FundacionContainer}>
-      
+    <ScrollView>
+              
       <View style={styles.FundacionContent}>
         <Text style={styles.fundacionTitle}>FORMATE PROFESIONALMENTE</Text>
         <Text style={styles.fundacionTitle}> </Text>
         <Text style={styles.fundacionTitle}> </Text>
         <Text style={styles.fundacionText}>Generamos oportunidades de formación que se adaptan a tu ritmo de vida, con propuestas que</Text>
-        <Text style={styles.fundacionText}>potencian tus objetivos y orientadas al mercado actual. Todos nuestros ciclos de formación</Text>
-        <Text style={styles.fundacionText}>profesional cuentan con Certificación Oficial y contenidos dinámicos, con prácticas</Text>
+        <Text>
+          <Text style={styles.fundacionText}>potencian </Text>
+          <Text style={{fontWeight: "bold"}}>tus objetivos</Text>
+          <Text style={styles.fundacionText}> y orientadas al mercado actual. Todos nuestros ciclos de formación</Text>
+        </Text>
+        <Text>
+          <Text style={styles.fundacionText}>profesional cuentan con </Text>
+          <Text style={{fontWeight: "bold"}}>Certificación Oficial</Text>
+          <Text style={styles.fundacionText}> y contenidos dinámicos, con prácticas</Text>
+        </Text>
         <Text style={styles.fundacionText}>especializadas y acompañamiento de nuestro equipo de profesionales.</Text>
+        <Text style={styles.fundacionTitle}> </Text>
+        <Text style={styles.fundacionTitle}> </Text>
+        <Text style={styles.fundacionTitle}> </Text>
+        <Text style={styles.fundacionTitle}> </Text>
+        <Text>
+          <Text style={styles.fundacionText}>Nos adaptamos a la </Text>
+          <Text style={{fontWeight: "bold"}}>nueva normalidad</Text>
+          <Text style={styles.fundacionText}>, mejoramos</Text>
+        </Text>
+        <Text style={styles.fundacionText}>para que puedas cursar de una manera segura. Tres</Text>
+        <Text>
+          <Text style={styles.fundacionText}>modalidades </Text>
+          <Text style={{fontWeight: "bold"}}>presencial, blend (semipresencial) y</Text>
+        </Text>
+        <Text style={{fontWeight: "bold"}}>online.</Text>
       </View>
 
       <View >
         <Button title="Contacto" onPress={() => navigation.navigate("Contacto")} />
       </View>
-
+    
+    </ScrollView>
     </View>
   );
 };
 const styles = StyleSheet.create({
   FundacionContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#6CD348',
     alignItems: 'strech',
     alignItems: 'center'
   },
