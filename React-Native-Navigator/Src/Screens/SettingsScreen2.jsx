@@ -27,7 +27,7 @@ const SettingsScreen2 = () => {
       </View>
 
     
-    <View style={{flexDirection: 'row', flex: 3}}>              
+    <View style={{flexDirection: 'row', flex: 3,  justifyContent: 'space-between'}}>              
         <View style={{flexDirection: 'column'}}>
           <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/terrainstitutodeformacionagropecuaria/')}>
             <Image style={styles.conctactImage} source={require('../../assets/facebook-48.svg')}/> 
