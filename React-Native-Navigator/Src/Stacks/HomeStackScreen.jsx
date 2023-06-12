@@ -7,8 +7,7 @@ import HomeScreen2 from "../screens/HomeScreen2";
 const HomeStackScreen = () => {
   const HomeStack = createNativeStackNavigator();
 
-  return (
-   
+  return (   
     <HomeStack.Navigator screenOptions={{headerTitleAlign: 'center'}}>      
       <HomeStack.Screen name="Bienvenido" component={HomeScreen1} style={styles.centered} />
       <HomeStack.Screen name="Home" component={HomeScreen2} />
@@ -19,7 +18,7 @@ const HomeStackScreen = () => {
 const styles = StyleSheet.create({
   centered: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#33691E',
     alignItems: 'strech',
     alignItems: 'center'
   },

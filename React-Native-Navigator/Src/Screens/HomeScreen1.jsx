@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  View, ScrollView, Text, Button, Image, StyleSheet } from "react-native";
+import { ImageBackground, View, ScrollView, Text, Button, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -7,10 +7,11 @@ const HomeScreen1 = () => {
   const navigation = useNavigation();
   return (
    <SafeAreaProvider>
-   <View style={styles.container}>   
+   <View style={styles.landingContainer}>   
+    <ImageBackground tintColor={'rgba(0,0,0,0.2)'}  source={require('../../assets/silos.jpg')} resizeMode="cover" style={styles.landingCoverImage}>
     <ScrollView>
-      <View style={styles.content}>
-        <Image style={styles.LandingImage} source={require('../../assets/Terra.png')}/> 
+      <View>
+        <Image style={styles.LandingTerra} source={require('../../assets/logo-white.png')}/> 
         <Text>Terra | Instituto de Formación Agropecuaria</Text>           
       </View>
         
@@ -22,6 +23,7 @@ const HomeScreen1 = () => {
         <Image style={styles.LandingImage2} source={require('../../assets/FundacionEducativaSaberes.png')}/> 
       </View>
     </ScrollView>
+    </ImageBackground>
   </View>
   </SafeAreaProvider>
   );
@@ -29,25 +31,29 @@ const HomeScreen1 = () => {
 
 
 const styles = StyleSheet.create({
-  container: {
+  landingContainer: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'strech',
     alignItems: 'center'
   },
-  LandingImage:{
-      width: '24vw',
-      height: 90,
-      margin: 7
+  LandingTerra:{
+    width: '7vw',
+    height: 40,
+    margin: 2,      
+  },
+  landingCoverImage:{
+    flex: 1,
+    justifyContent: 'center',  
   },
   LandingImage2:{
     width: '15vw',
     height: 60,
-    margin: 7
-},
+    margin: 7,
+    opacity: 1
+  },
   content: {
-    alignItems: 'center',
-    marginTop: 50,
+    alignItems: 'left',
+    marginTop: 30,
     marginBottom: 40
   },
   LandingButton: {
