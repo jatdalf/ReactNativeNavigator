@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Button, StyleSheet, ScrollView, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const SettingsScreen1 = () => {
   const navigation = useNavigation();
@@ -8,27 +9,16 @@ const SettingsScreen1 = () => {
     <View style={styles.FundacionContainer}>
     <ScrollView>
               
-      <View style={styles.FundacionContent}>
-        <Text style={styles.fundacionTitle}>FORMATE PROFESIONALMENTE</Text>
-        <Text style={styles.fundacionTitle}> </Text>
-        <Text style={styles.fundacionTitle}> </Text>
-        <Text style={styles.fundacionText}>Generamos oportunidades de formación que se adaptan a tu ritmo de vida, con propuestas que</Text>
-        <Text>
-          <Text style={styles.fundacionText}>potencian </Text>
-          <Text style={{fontWeight: "bold"}}>tus objetivos</Text>
-          <Text style={styles.fundacionText}> y orientadas al mercado actual. Todos nuestros ciclos de formación</Text>
-        </Text>
-        <Text>
-          <Text style={styles.fundacionText}>profesional cuentan con </Text>
-          <Text style={{fontWeight: "bold"}}>Certificación Oficial</Text>
-          <Text style={styles.fundacionText}> y contenidos dinámicos, con prácticas</Text>
-        </Text>
-        <Text style={styles.fundacionText}>especializadas y acompañamiento de nuestro equipo de profesionales.</Text>
-        <Text style={styles.fundacionTitle}> </Text>
-        <Text style={styles.fundacionTitle}> </Text>
-        <Text style={styles.fundacionTitle}> </Text>
-        <Text style={styles.fundacionTitle}> </Text>
-        <Text>
+      <View style={styles.FundacionTitle}>
+        <View>
+          <Text style={styles.LeftTitle}>NUEVA MODALIDAD</Text>
+          <Text > </Text>
+          <Text > </Text>
+          <Text style={styles.NotPressableText}>———</Text>
+        </View>
+        
+
+        <Text style={styles.firstText}>
           <Text style={styles.fundacionText}>Nos adaptamos a la </Text>
           <Text style={{fontWeight: "bold"}}>nueva normalidad</Text>
           <Text style={styles.fundacionText}>, mejoramos</Text>
@@ -39,8 +29,12 @@ const SettingsScreen1 = () => {
           <Text style={{fontWeight: "bold"}}>presencial, blend (semipresencial) y</Text>
         </Text>
         <Text style={{fontWeight: "bold"}}>online.</Text>
+      
       </View>
+      <View>
 
+      </View>
+        <Image style={styles.aboutImage1}  source={require('../../assets/nmo-cursos-2-1.jpg')}/>  
       <View >
         <Button title="Contacto" onPress={() => navigation.navigate("Contacto")} />
       </View>
@@ -52,15 +46,34 @@ const SettingsScreen1 = () => {
 const styles = StyleSheet.create({
   FundacionContainer: {
     flex: 1,
-    backgroundColor: '#6CD348',
+    backgroundColor: 'white',
     alignItems: 'strech',
     alignItems: 'center'
   },
-  FundacionContent: {
-    alignItems: 'center',
-    marginTop: 50,
-    marginBottom: 40,
-    flex: 2,
+  NotPressableText:{
+    color: '#7CB342',
+    alignItems: 'left',
+    fontWeight: '800',
+    fontSize: hp('4%'),    
+    position: 'fixed',
+    top: hp('32%'),
+    letterSpacing: -1,
+  },
+  LeftTitle:{
+    alignItems: 'left',  
+    fontWeight: '500', 
+    fontSize: hp('5%'),
+    position: 'fixed',
+    top: hp('25%'),
+  },
+  FundacionTitle:{
+    alignItems: 'left',
+    flexDirection: 'column', 
+    justify: 'flex'
+  },
+  firstText: {
+    position: 'fixed',
+    top: hp('45%'),
   },
   LandingButton: {
       height: 50,
@@ -75,7 +88,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',  
     fontWeight: '400', 
     fontSize: 14
-  }
+  },
+  aboutImage1:{
+    alignItems: 'strech', 
+    width: wp('40%'),
+    height: hp('40%'),
+  },
 });
 
 export default SettingsScreen1;

@@ -11,7 +11,7 @@ const Tabs = () => {
     <NavigationContainer>
       <Tab.Navigator screenOptions={{ headerShown: false }}>
         <Tab.Screen name="Inicio" component={HomeStackScreen} />
-        <Tab.Screen name="Sobre nosotros" component={SettingsStackScreen} />
+        <Tab.Screen name="INSTITUTO TERRA" component={SettingsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -1,67 +1,118 @@
-import React, { Component }  from "react";
-import {View, Text, Button, StyleSheet, ScrollView, Image} from "react-native";
+import React, { Component } from "react";
+import { ImageBackground, View, ScrollView, Text, TouchableOpacity , Image, StyleSheet, Pressable, Dimensions } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const HomeScreen2 = () => {
+  const navigation = useNavigation();
   return (
-    <View >
-      <ScrollView>
-        <View style={styles.HomeContent}>
-         <Text >Aqui se visualizaran las imagenes</Text>
-        </View>
+   <SafeAreaProvider>
+   <View style={styles.landingContainer}>   
+    <ImageBackground source={require('../../assets/Catalogo.jpeg')} resizeMode="cover" style={styles.catCoverImage}>
+    <ScrollView>
+      <View  style={styles.centered}>
+        <TouchableOpacity style={styles.LandingButton} onPress={() => navigation.navigate("Catálogo")} >
+         <Text  style={styles.buttonText}>{'ANALISIS COMERCIAL'} </Text>
+        </TouchableOpacity>  
+      </View>
 
-        <View style={styles.BoxContainer}>
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-        </View>
- 
-        <View style={styles.BoxContainer}>
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-        </View>
+      <View style={styles.centered}>
+        <Pressable style={styles.NotPressableButton}>
+          <Text  style={styles.NotPressableText}>——————————————————————————</Text>
+        </Pressable>
+      </View>
+      
 
-        <View style={styles.BoxContainer}>
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-          <Image style={styles.HomeImage} source={require('../../assets/test.png')}/> 
-        </View>
+      <View style={styles.centered2}>
+        <TouchableOpacity style={styles.LandingButton} onPress={() => navigation.navigate("Catálogo")} >
+         <Text  style={styles.buttonText}>{'TIPIFICACION'} </Text>
+        </TouchableOpacity>  
+      </View>
 
-      </ScrollView>
-    </View>
+    </ScrollView>
+    </ImageBackground>
+  </View>
+  </SafeAreaProvider>
   );
 };
 
+
 const styles = StyleSheet.create({
-  HomeContainer: {
+  landingContainer: {
     flex: 1,
-    backgroundColor: '#D7D0D0',   
+    alignItems: 'strech',
     alignItems: 'center'
   },
-  HomeContent: {
-    alignItems: 'center',
-    marginTop: 50,
-    marginBottom: 40
-  },
-  BoxContainer:{
+  catCoverImage:{
     flex: 1,
-    flexDirection: 'row',
+    justifyContent: 'center',  
+    width: hp('100%'),
+        
+  },
+  LandingButton: {
+    alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical:  hp('1%'),
+    paddingHorizontal: 32,
+    borderRadius: 25,
+    elevation: 3,
+    backgroundColor: '#7CB342',  
+    position: 'fixed',   
+  },
+  NotPressableButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical:  hp('1%'),
+    paddingHorizontal: 10,   
+    elevation: 3,
+    backgroundColor: '#0A0B0A',  
+    position: 'fixed',
+    top: 240,      
+  },
+  NotPressableText:{
+    color: 'white',
+    alignItems: 'center',
+    fontWeight: '800',
+    fontSize: hp('2%'),    
+  },
+  centered: {
+    alignItems: 'center',   
+    top:110,
+  }, 
+   centered2: {
+    alignItems: 'center',   
+    top:340,
+  }, 
+  responsiveBox: {
+    width: wp('99%'),
+    height: hp('17%'),       
+    alignItems: 'left',
+    
     
   },
-  HomeBox: {
-      height: 100,
-      width: 100,
-      color: '#0FECB1',
-      marginBottom: 10,      
-  },  
-  HomeImage:{
-    height: 100,
-    width: 100,
-    margin: 'auto',    
+  landingTitle:{
+    color: 'white',
+    alignItems: 'center',
+    fontWeight: '600',
+    fontSize: hp('4%'),
+  },
+  buttonText:{
+    color: 'white',
+    alignItems: 'center',
+    fontSize: hp('3%'),
+    fontWeight: '400',
+  },
+  LandingText:{
+    color: 'white',
+    alignItems: 'left',
+    fontSize: hp('3%'),
+    fontWeight: '300',
   }
 });
-
 
 
 export default HomeScreen2;

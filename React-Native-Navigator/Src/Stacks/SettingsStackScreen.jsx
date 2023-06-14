@@ -8,7 +8,7 @@ const SettingsStackScreen = () => {
   const SettingsStack = createNativeStackNavigator();
   return (
     <SettingsStack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
-      <SettingsStack.Screen name="FUNDACION" component={SettingsScreen1} />
+      <SettingsStack.Screen name="INSTITUTO TERRA" component={SettingsScreen1} />
       <SettingsStack.Screen name="Contacto" component={SettingsScreen2} />
     </SettingsStack.Navigator>
   );
