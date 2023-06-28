@@ -27,22 +27,26 @@ const SettingsScreen2 = () => {
       </View>
 
     
-    <View style={{flexDirection: 'row', flex: 3,  justifyContent: 'space-between'}}>              
+    <View style={{flexDirection: 'row', flex: 3,  justifyContent: 'space-between'}}>   
+
         <View style={{flexDirection: 'column'}}>
           <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/terrainstitutodeformacionagropecuaria/')}>
             <Image style={styles.conctactImage} source={require('../../assets/facebook-48.svg')}/> 
           </TouchableOpacity>               
         </View>
+
         <View style={{flexDirection: 'column'}}>
           <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/terra.instituto.agropecuario/')}>
             <Image style={styles.conctactImage} source={require('../../assets/instagram-48.svg')}/> 
           </TouchableOpacity>                                 
         </View>
+
         <View style={{flexDirection: 'column'}}>
           <TouchableOpacity onPress={() => Linking.openURL('https://twitter.com/Terra_Instituto')}>
             <Image style={styles.conctactImage} source={require('../../assets/twitter-48.svg')}/> 
           </TouchableOpacity>                   
         </View>
+        
         <View style={{flexDirection: 'column'}}>
           <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/c/TerraInstitutodeFormaci%C3%B3nAgropecuaria')}>
             <Image style={styles.conctactImage} source={require('../../assets/youtube-48.svg')}/> 
