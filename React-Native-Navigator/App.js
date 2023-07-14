@@ -6,7 +6,7 @@ import Tabs from "./src/Tab";
 export default function App() {
   return <Tabs />;
 }
-
+//App para....
 const styles = StyleSheet.create({
   container: {
     flex: 1,
